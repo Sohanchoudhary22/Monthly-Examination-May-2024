@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main_container">
         <nav>
@@ -30,8 +32,10 @@
             </div>
             <div>
                 <h1>Welcome to S. K. Modern School Jaipur</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, doloremque! Libero neque nisi corporis ratione. In optio natus ipsum nisi qui facilis molestias asperiores. Dicta dolorum rerum expedita dolores laboriosam!
-                Cupiditate enim atque quo numquam harum aperiam illo nobis totam a similique. 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, doloremque! Libero neque nisi
+                    corporis ratione. In optio natus ipsum nisi qui facilis molestias asperiores. Dicta dolorum rerum
+                    expedita dolores laboriosam!
+                    Cupiditate enim atque quo numquam harum aperiam illo nobis totam a similique.
             </div>
         </div>
         <div class="data">
@@ -39,7 +43,8 @@
                 <h2>Registration Form</h2><br><br>
                 <label for="">Name:-</label><br><input type="text" placeholder="Enter your name" id="name"><br><br>
                 <label for="">Email:-</label><br><input type="email" placeholder="Enter your email" id="email"><br><br>
-                <label for="">Mobile:-</label><br><input type="text" placeholder="Enter your Mobile" id="mobile"><br><br>
+                <label for="">Mobile:-</label><br><input type="text" placeholder="Enter your Mobile"
+                    id="mobile"><br><br>
                 <div id="btn">
                     <button>submit</button>
                 </div>
@@ -67,71 +72,78 @@
     </div>
 </body>
 <script>
-    let arr= JSON.parse(localStorage.getItem("user"))||[];
-  
-    let form= document.getElementById("form")
+    let arr = JSON.parse(localStorage.getItem("user")) || [];
 
-    
+    let form = document.getElementById("form")
 
-    let btn= document.getElementById("btn")
+
+
+    let btn = document.getElementById("btn")
     btn.addEventListener("click", getData)
-    function getData(e){
+    function getData(e) {
         e.preventDefault()
-
-         let obj={
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value,
-            mobile:document.getElementById("mobile").value,
-         }
-    arr.push(obj)
-    console.log(arr)
-    localStorage.setItem("user", JSON.stringify(arr))
-    form.reset()
+        if (name === "" && email === "" && mobile === "") {
+            alert("please fill details")
+            return
+        } else {
+            let obj = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                mobile: document.getElementById("mobile").value,
+            }
+            arr.push(obj)
+            console.log(arr)
+            localStorage.setItem("user", JSON.stringify(arr))
+            form.reset()
+        }
     }
 
 
-    function displayData(data){
-          let Table= document.getElementById("Table")
-          let table=document.createElement("table")
-          let thead=document.createElement("thead")
-          let tr=document.createElement("tr")
-          let th=document.createElement("th")
-          th.innerText="S. No"
-          let th1=document.createElement("th")
-          th1.innerText="Name"
-          let th2=document.createElement("th")
-          th2.innerText="Email"
-          let th3=document.createElement("th")
-          th3.innerText="Mobile"
 
-        tr.append(th,th1,th2,th3)
+
+    function displayData(data) {
+        let Table = document.getElementById("Table")
+        let table = document.createElement("table")
+        let thead = document.createElement("thead")
+        let tr = document.createElement("tr")
+        let th = document.createElement("th")
+        th.innerText = "S. No"
+        let th1 = document.createElement("th")
+        th1.innerText = "Name"
+        let th2 = document.createElement("th")
+        th2.innerText = "Email"
+        let th3 = document.createElement("th")
+        th3.innerText = "Mobile"
+
+        tr.append(th, th1, th2, th3)
         thead.append(tr)
         table.append(thead)
         Table.append(table)
 
-      data.forEach((ele,index) =>{
-     
-           index++
+        data.forEach((ele, index) => {
 
-           let tbody= document.createElement("tbody")
-      
-           let tr= document.createElement("tr")
-           let td= document.createElement("td")
-           td.innerText= index
-           let td1= document.createElement("td")
-           td1.innerText= ele.name
-           let td2= document.createElement("td")
-           td2.innerText= ele.email
-           let td3= document.createElement("td")
-           td3.innerText= ele.mobile
-           
-        tr.append(td,td1,td2,td3)
-        tbody.append(tr)
-        table.append(tbody)
-        Table.append(table)
-      });
-      console.log(displayData)  
+            index++
+
+            let tbody = document.createElement("tbody")
+
+            let tr = document.createElement("tr")
+            let td = document.createElement("td")
+            td.innerText = index
+            let td1 = document.createElement("td")
+            td1.innerText = ele.name
+            let td2 = document.createElement("td")
+            td2.innerText = ele.email
+            let td3 = document.createElement("td")
+            td3.innerText = ele.mobile
+
+            tr.append(td, td1, td2, td3)
+            tbody.append(tr)
+            table.append(tbody)
+            Table.append(table)
+        });
+        console.log(displayData)
     }
     displayData(arr)
 </script>
+
 </html>
