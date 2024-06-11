@@ -11,8 +11,10 @@ nav{
     margin: auto;
     display: flex;
     background-color: rgb(180, 203, 245);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .logo{
     width: 6%;
@@ -40,7 +42,7 @@ a{
     text-decoration: none;
 }
 .menu{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 8%;
     margin: 20px;
     text-align: center;
@@ -172,7 +174,7 @@ th{
     width:30%;
     display: grid;
 }
-span{
+.footer span{
     color: white;
 }
 h4{
@@ -180,49 +182,71 @@ h4{
 }
     @media screen and (min-width:200px) and (max-width:420px) {
         nav{
-            gap:8px;
+            display: flex;
+            justify-content: space-between;
         }
-        .nav-h1{
-            width: 70%;
+        .logo{
+            width:20%;
+            height:90px;
+            padding:12px;
+            margin-left:30px;
         }
-        .nav-img{
-            width:30%;
-            margin-top:8px;
-        } 
-        nav img{
-           width: 40%;
-            margin-left: 20px;
+        .logo img{
+            height:60px;
         }
-        h1{
-            width: 100%;
-            font-size:25px;
-      }
+        .link{
+            display: none;
+        }
+        .menu{
+            width:10%;
+            font-weight: bold;
+           display:block;
+        }
+        .Hero_section{
+            height: 600px;
+            display:block;
+            
+        }
+        .Hero_section div{
+            width:90%;
+        }
+        .Hero_section div h1,p{
+            margin-left:0px;
+            color: blueviolet;
+        }
+        p{
+            color: black;
+        }
+        .Hero_section img{
+             height:300px;
+        }
       .data{
         display: block;
-        height: 800px;
+        padding:10px;
+       
       }
       #form{
-        width: 60%;
-        height: 250px;
-        padding: 20px;
-        margin: auto;
-        margin-top: 30px;
-      }
-      input{
-        width:95%;
-      }
-      #btn{
-        margin:25px 
-      }
-      button{
-        width: 40%;
-      }
-      #Table{
-        width: 50%;
-      }
-      th{
+        width:80%;
+        margin-top:50px;
+        margin-left: 40px;
+        height:420px;
+    }
+    button{
+        width:35%;
+    }
+    #Table{
+        width:102%;
+        margin-top: 40px;
+        height: auto;
+        padding: 10px;
+    }
+    table, th ,td ,tr{
+        height: 30px;
         font-size: 15px;
-      }
+    }
+    th{
+        font-size:15px;
+    }
       .footer{
             gap:15px;
             height: 100px;
@@ -239,7 +263,7 @@ h4{
             width:35%;
             height: 40px;
         }
-        a{
+        .footer a{
             color: white;
             font-size:12px;
             text-decoration: none;
@@ -259,59 +283,90 @@ h4{
     }
     @media screen and (min-width:420px) and (max-width:1080px) {
         nav{
-            gap:10px;
+            display: flex;
+            justify-content: space-between;
         }
-        .nav-h1{
-            width: 70%;
+        .logo{
+            width:20%;
+            height:100px;
+            padding:12px;
+            margin-left:30px;
         }
-        .nav-img{
-            width:30%;
-            margin-top:8px;
-        } 
-        nav img{
-          width: 35%;
-            margin-left: 20px;
+        .logo img{
+            width: 75%;
+            height:80px;
         }
-        h1{
-            font-size:35px;
-      }
+        .link{
+            display: none;
+        }
+        .menu{
+            width:20%;
+            font-weight: bold;
+           display:block;
+           font-size: 50px;
+        }
+        .Hero_section{
+            height: 400px;
+            display:flex;
+            
+        }
+        .Hero_section div{
+            width:45%;
+        }
+        .Hero_section div h1,p{
+            margin-left:0px;
+            color: blueviolet;
+        }
+        p{
+            font-size: 18px;
+            color: black;
+        }
+        .Hero_section img{
+             height:300px;
+        }
       .data{
-        border: 1px solid red;
         display: block;
-        height: auto;
-        height: 800px;
+        padding:10px;
+       
       }
       #form{
-        width:40%;
-        height:315px;
-        padding: 20px;
-        margin: auto;
-        margin-top: 30px;
-        font-size: 25px;
-      }
-      input{
-        width:95%;
+        width:60%;
+        margin-left:150px;
+        height:490px;
+        font-size:25px;
+    }
+    h2{
+        font-size: 35px;
+    }
+    input{
         height: 35px;
         font-size: 20px;
       }
-      #btn{
-        margin:25px 
-      }
-      button{
+    button{
+        margin-top: 10px;
         width: 40%;
+        height: 45px;
+        font-size: 25px;
       }
       #Table{
         margin: auto;
-        width: 80%;
-        margin-top: 60px;
+        width: 95%;
+        margin-top: 40px;
+        height: auto;
+        padding: 10px;
+        
       }
       table{
-        font-size: 20px;
+        font-size: 25px;
       }
       th{
         font-size: 25px;
       }
       .footer{
+            gap:15px;
+            height: 100px;
+        }
+        .footer{
             gap:15px;
             height: 150px;
         }
