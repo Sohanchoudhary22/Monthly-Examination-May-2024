@@ -74,17 +74,15 @@
 <script>
     let arr = JSON.parse(localStorage.getItem("user")) || [];
 
-    let form = document.getElementById("form")
-    let name = document.getElementById("name").value
-    let email = document.getElementById("email").value
-    let mobile = document.getElementById("mobile").value
-
-
     let btn = document.getElementById("btn")
     btn.addEventListener("click", getData)
     function getData(e) {
         e.preventDefault()
-        if (name === "" && email === "" && mobile === "") {
+        let form = document.getElementById("form")
+          let name = document.getElementById("name").value
+          let email = document.getElementById("email").value
+          let mobile = document.getElementById("mobile").value
+        if (name === ""&& email === "" && mobile === "") {
             alert("please fill details")
             return
         } else {
