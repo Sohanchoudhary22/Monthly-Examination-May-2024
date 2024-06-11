@@ -75,7 +75,9 @@
     let arr = JSON.parse(localStorage.getItem("user")) || [];
 
     let form = document.getElementById("form")
-
+    let name = document.getElementById("name").value
+    let email = document.getElementById("email").value
+    let mobile = document.getElementById("mobile").value
 
 
     let btn = document.getElementById("btn")
@@ -87,9 +89,9 @@
             return
         } else {
             let obj = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                mobile: document.getElementById("mobile").value,
+                name: name,
+                email: email,
+                mobile: mobile
             }
             arr.push(obj)
             console.log(arr)
